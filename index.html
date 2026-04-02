@@ -284,13 +284,13 @@
 
       <h1>NeoLauncher Privacy Policy</h1>
       <p class="subtitle">
-        This Privacy Policy explains how NeoLauncher collects, uses, and protects information when you use the app.
+        This Privacy Policy explains how NeoLauncher collects, uses, stores, and protects information when you use the app.
       </p>
 
       <div class="meta">
         <div class="meta-card">
           <div class="meta-label">Last updated</div>
-          <div class="meta-value">March 31, 2026</div>
+          <div class="meta-value">April 2, 2026</div>
         </div>
         <div class="meta-card">
           <div class="meta-label">Developer</div>
@@ -311,128 +311,217 @@
         <a href="#intro">1. Introduction</a>
         <a href="#collect">2. Information We Collect</a>
         <a href="#use">3. How We Use Information</a>
-        <a href="#share">4. Data Sharing</a>
-        <a href="#storage">5. Data Storage</a>
-        <a href="#permissions">6. Permissions</a>
-        <a href="#choices">7. Your Choices</a>
-        <a href="#security">8. Data Security</a>
-        <a href="#children">9. Children’s Privacy</a>
-        <a href="#changes">10. Changes to This Policy</a>
-        <a href="#contact">11. Contact</a>
+        <a href="#share">4. Data Sharing and Third Parties</a>
+        <a href="#ads">5. No Advertising or Tracking</a>
+        <a href="#storage">6. Data Storage and Retention</a>
+        <a href="#permissions">7. Permissions and Device Access</a>
+        <a href="#choices">8. Your Choices and Controls</a>
+        <a href="#security">9. Data Security</a>
+        <a href="#children">10. Children’s Privacy</a>
+        <a href="#changes">11. Changes to This Policy</a>
+        <a href="#contact">12. Contact</a>
       </nav>
 
       <main class="content-card">
         <section id="intro">
           <h2>1. Introduction</h2>
           <p>
-            NeoLauncher is designed to provide launcher, search, widget, and personalization features while keeping
-            data collection as limited as possible. Most app data remains on your device.
+            NeoLauncher is designed to provide launcher, search, widget, and personalization features while keeping data collection as limited as possible.
           </p>
+          <p>
+            Most data used by NeoLauncher remains on your device and is processed locally. Some information may be sent to external services only when needed to provide certain optional features, such as crash reporting, weather, geocoding, or web search.
+          </p>
+          <div class="highlight">
+            NeoLauncher does not sell your personal data and does not share personal data with third parties for advertising purposes.
+          </div>
         </section>
 
         <section id="collect">
           <h2>2. Information We Collect</h2>
-          <p>The app may access or process the following categories of information:</p>
+          <p>The app may access, process, or store the following categories of information:</p>
           <ul>
-            <li><strong>Crash diagnostics</strong> such as crash reports and technical error data.</li>
-            <li><strong>Contacts</strong>, if you grant permission, to support contact search features.</li>
-            <li><strong>Calendar information</strong>, if you grant permission, to display event-related features.</li>
-            <li><strong>Location data</strong>, if you grant permission, to provide weather functionality.</li>
-            <li><strong>Notification-related data</strong>, if you enable the feature, to show unread badge counts.</li>
-            <li><strong>Battery state</strong>, for battery ring and related overlay features.</li>
-            <li><strong>User-entered search queries</strong> when using search or web suggestion features.</li>
-            <li><strong>App settings and layout preferences</strong> stored locally on your device.</li>
+            <li>
+              <strong>Crash diagnostics</strong> collected through <strong>Firebase Crashlytics</strong>, including crash reports, stack traces, technical error information, app version, and limited diagnostic app information such as launcher style.
+            </li>
+            <li>
+              <strong>Installed app metadata</strong>, such as app labels, icons, and component information, to display and organize the launcher and app drawer.
+            </li>
+            <li>
+              <strong>Contacts</strong>, if you grant permission, to support contact search functionality.
+            </li>
+            <li>
+              <strong>Calendar information</strong>, if you grant permission, to show upcoming events and calendar-related launcher features.
+            </li>
+            <li>
+              <strong>Location data</strong>, if you grant permission, to provide weather-related functionality.
+            </li>
+            <li>
+              <strong>Notification-related data</strong>, such as app package names and unread notification counts, if you enable notification access for unread badge features.
+            </li>
+            <li>
+              <strong>Battery state</strong>, such as battery level and charging state, for battery ring and related overlay features.
+            </li>
+            <li>
+              <strong>Camera availability state</strong>, only to optionally hide the battery ring while the front camera is in use.
+            </li>
+            <li>
+              <strong>User-entered search queries</strong>, when you use search suggestions or web search features.
+            </li>
+            <li>
+              <strong>Media session information</strong>, such as media title, artist, album art, and app package, when media-related launcher features are used.
+            </li>
+            <li>
+              <strong>App settings, layout preferences, workspace data, dock configuration, and personalization choices</strong> stored locally on your device.
+            </li>
           </ul>
           <div class="highlight">
-            Most information used by NeoLauncher stays on your device and is processed locally.
+            Most information used by NeoLauncher stays on your device and is processed locally. Optional features only access the data needed for that feature to work.
           </div>
         </section>
 
         <section id="use">
           <h2>3. How We Use Information</h2>
-          <p>NeoLauncher uses information only to provide and improve app features, including:</p>
+          <p>NeoLauncher uses information only to provide, maintain, and improve app functionality. This includes:</p>
           <ul>
-            <li>Displaying apps, contacts, and calendar events</li>
-            <li>Providing weather information</li>
-            <li>Supporting search and web suggestions</li>
-            <li>Maintaining launcher settings and layout</li>
-            <li>Improving app stability and fixing crashes</li>
+            <li>Displaying installed apps, home screen items, folders, and app drawer content</li>
+            <li>Providing contact search and calendar event features when permission is granted</li>
+            <li>Providing weather information and location-based weather display when permission is granted</li>
+            <li>Supporting search suggestions and web search actions</li>
+            <li>Displaying unread badge counts for supported apps</li>
+            <li>Displaying battery ring and edge lighting overlays</li>
+            <li>Showing media-related launcher widgets or media information where applicable</li>
+            <li>Saving launcher settings, theme choices, layout data, and backup/restore information</li>
+            <li>Monitoring crashes and technical issues to improve stability and fix bugs</li>
           </ul>
         </section>
 
         <section id="share">
-          <h2>4. Data Sharing</h2>
-          <p>We do not sell your personal data.</p>
+          <h2>4. Data Sharing and Third Parties</h2>
           <p>
-            Some data may be shared with external services only when necessary to provide specific features:
+            NeoLauncher does not sell your personal data. NeoLauncher also does not share personal data with third parties for advertising purposes.
+          </p>
+          <p>
+            Some information may be sent to external services only when required to provide optional features:
           </p>
           <ul>
-            <li><strong>Firebase Crashlytics</strong> for crash reporting and diagnostics</li>
-            <li><strong>Open-Meteo</strong> for weather data requests</li>
-            <li><strong>Nominatim / OpenStreetMap</strong> for location-related lookup</li>
-            <li><strong>Search providers</strong> such as Google, Bing, DuckDuckGo, Yahoo, or Brave when you use web search features</li>
+            <li>
+              <strong>Firebase Crashlytics</strong> for crash reporting and technical diagnostics
+            </li>
+            <li>
+              <strong>Open-Meteo</strong> for weather data requests
+            </li>
+            <li>
+              <strong>Nominatim / OpenStreetMap</strong> for geocoding or location-related lookups
+            </li>
+            <li>
+              <strong>Search providers</strong> such as Google, Bing, DuckDuckGo, Yahoo, or Brave when you use web search or search suggestion features
+            </li>
           </ul>
+          <p class="muted">
+            Contacts, calendar data, notification badge counts, media information, battery state, and most personalization data are processed locally and are not transmitted by those features themselves.
+          </p>
+        </section>
+
+        <section id="ads">
+          <h2>5. No Advertising or Tracking</h2>
+          <p>
+            NeoLauncher does not display advertisements and does not include advertising SDKs.
+          </p>
+          <p>
+            NeoLauncher does not track users for marketing, behavioral advertising, or profiling purposes.
+          </p>
+          <p>
+            The only third-party service currently used in the app is <strong>Firebase Crashlytics</strong>, which is used solely for crash reporting and stability monitoring.
+          </p>
         </section>
 
         <section id="storage">
-          <h2>5. Data Storage</h2>
+          <h2>6. Data Storage and Retention</h2>
           <p>
-            NeoLauncher stores most data locally on your device, such as settings, workspace layout, and personalization choices.
+            NeoLauncher stores most app data locally on your device. This may include settings, workspace layout, dock configuration, theme choices, preferences, backups, and similar launcher data.
           </p>
           <p>
-            Some technical information, such as crash reports, may be transmitted securely to Firebase Crashlytics.
+            Some technical diagnostic information, such as crash reports, may be transmitted securely to Firebase Crashlytics.
+          </p>
+          <p>
+            If you use backup or restore features, exported backup files may be created by you and stored or shared through Android’s file handling system.
+          </p>
+          <p class="muted">
+            Crash reporting via Firebase Crashlytics is enabled by default and cannot currently be disabled from within the app.
           </p>
         </section>
 
         <section id="permissions">
-          <h2>6. Permissions</h2>
-          <p>NeoLauncher may request permissions to enable optional features:</p>
+          <h2>7. Permissions and Device Access</h2>
+          <p>NeoLauncher may request permissions or special access to enable optional features:</p>
           <ul>
-            <li><strong>Contacts</strong> for contact search</li>
-            <li><strong>Calendar</strong> for event display</li>
-            <li><strong>Location</strong> for weather</li>
-            <li><strong>Notifications access</strong> for unread badge counts</li>
-            <li><strong>Accessibility access</strong> for overlay-related features such as battery ring and edge lighting</li>
+            <li>
+              <strong>Contacts permission</strong> to support contact search
+            </li>
+            <li>
+              <strong>Calendar permission</strong> to show event-related features
+            </li>
+            <li>
+              <strong>Location permission</strong> to provide weather functionality
+            </li>
+            <li>
+              <strong>Notification access</strong> to show unread badge counts on app icons
+            </li>
+            <li>
+              <strong>Accessibility access</strong> to enable visual overlay features such as battery ring and edge lighting
+            </li>
+            <li>
+              <strong>Device admin access</strong> only if you choose to use supported device control actions such as screen lock
+            </li>
           </ul>
+          <p>
+            Accessibility access is used solely to support visual overlay functionality such as battery ring and edge lighting. It is not used to read personal messages, collect notification content, or monitor private user activity for advertising purposes.
+          </p>
+          <p>
+            For unread badges, NeoLauncher uses notification access only to determine app-related badge information such as package names and counts. It does not use this feature to sell or profile user data.
+          </p>
           <p class="muted">
-            If you deny any permission, the related feature may be limited or unavailable, but the app can still function.
+            If you deny any permission or special access, the related feature may be limited or unavailable, but the app can still function in a reduced mode.
           </p>
         </section>
 
         <section id="choices">
-          <h2>7. Your Choices</h2>
+          <h2>8. Your Choices and Controls</h2>
           <ul>
-            <li>You can deny or revoke permissions at any time in Android system settings.</li>
-            <li>You can reset app data using in-app reset options, where available.</li>
-            <li>You can uninstall the app to remove locally stored data from your device.</li>
+            <li>You can deny or revoke runtime permissions at any time through Android system settings.</li>
+            <li>You can disable notification access, accessibility access, or device admin access through Android system settings.</li>
+            <li>You can reset launcher settings and data using in-app reset options where available.</li>
+            <li>You can uninstall the app to remove locally stored app data from your device, subject to normal Android behavior.</li>
+            <li>You can choose not to use optional features such as contact search, calendar access, weather, battery ring, edge lighting, or unread badges.</li>
           </ul>
         </section>
 
         <section id="security">
-          <h2>8. Data Security</h2>
+          <h2>9. Data Security</h2>
           <p>
-            We take reasonable steps to protect information by limiting collection, keeping most data local,
-            and using established third-party services only where needed.
+            We take reasonable steps to protect information by limiting collection, keeping most processing on-device, and using established third-party services only when needed to provide app functionality.
+          </p>
+          <p>
+            However, no method of storage, transmission, or electronic processing can be guaranteed to be completely secure.
           </p>
         </section>
 
         <section id="children">
-          <h2>9. Children’s Privacy</h2>
+          <h2>10. Children’s Privacy</h2>
           <p>
             NeoLauncher is not directed to children, and we do not knowingly collect personal information from children.
           </p>
         </section>
 
         <section id="changes">
-          <h2>10. Changes to This Policy</h2>
+          <h2>11. Changes to This Policy</h2>
           <p>
-            This Privacy Policy may be updated from time to time. Any updates will be reflected by revising the
-            “Last updated” date at the top of this page.
+            This Privacy Policy may be updated from time to time. Any updates will be reflected by revising the “Last updated” date at the top of this page.
           </p>
         </section>
 
         <section id="contact">
-          <h2>11. Contact</h2>
+          <h2>12. Contact</h2>
           <div class="contact-box">
             <strong>Philson Varghese</strong><br />
             Email:
