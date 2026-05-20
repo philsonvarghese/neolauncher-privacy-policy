@@ -7,208 +7,251 @@
   <meta name="description" content="Privacy Policy for NeoLauncher by Philson Varghese" />
   <style>
     :root {
-      --bg-1: #0a0a12;
-      --bg-2: #121225;
+      --bg: #070914;
+      --bg2: #101426;
       --card: rgba(255, 255, 255, 0.08);
-      --card-border: rgba(255, 255, 255, 0.14);
-      --text: #f5f7ff;
-      --muted: #b9bfd6;
-      --accent: #9b7bff;
-      --accent-2: #5de1ff;
-      --accent-3: #ff6bd6;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      --radius: 24px;
+      --card2: rgba(255, 255, 255, 0.12);
+      --border: rgba(255, 255, 255, 0.16);
+      --text: #f7f8ff;
+      --muted: #b8bed4;
+      --accent: #8f7cff;
+      --accent2: #42d9ff;
+      --accent3: #ff62c7;
+      --success: #6fffc2;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.48);
+      --radius: 26px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(155, 123, 255, 0.22), transparent 30%),
-        radial-gradient(circle at top right, rgba(93, 225, 255, 0.16), transparent 24%),
-        radial-gradient(circle at bottom center, rgba(255, 107, 214, 0.12), transparent 22%),
-        linear-gradient(160deg, var(--bg-1), var(--bg-2));
+        radial-gradient(circle at 12% 0%, rgba(143, 124, 255, 0.34), transparent 30%),
+        radial-gradient(circle at 92% 10%, rgba(66, 217, 255, 0.22), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(255, 98, 199, 0.16), transparent 28%),
+        linear-gradient(150deg, var(--bg), var(--bg2));
       min-height: 100vh;
       line-height: 1.7;
     }
 
-    .container {
-      width: min(960px, calc(100% - 32px));
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent);
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 32px 0 56px;
+      padding: 34px 0 60px;
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      border: 1px solid var(--card-border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: 32px;
-      padding: 40px 28px;
+      padding: clamp(28px, 5vw, 56px);
+      border-radius: 34px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055)),
+        linear-gradient(135deg, rgba(143,124,255,0.15), rgba(66,217,255,0.08));
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
       box-shadow: var(--shadow);
     }
 
-    .hero::before {
+    .hero::after {
       content: "";
       position: absolute;
-      inset: -1px;
-      border-radius: 32px;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(155,123,255,0.65), rgba(93,225,255,0.45), rgba(255,107,214,0.45));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      pointer-events: none;
+      width: 360px;
+      height: 360px;
+      right: -120px;
+      top: -160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(66,217,255,0.28), transparent 65%);
     }
 
-    .badge {
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.9), transparent 20%),
+        linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+      box-shadow: 0 0 36px rgba(143, 124, 255, 0.45);
+    }
+
+    .brand-title {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 20px;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: -2px;
+    }
+
+    .pill {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--muted);
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #dfe4ff;
       font-size: 14px;
       margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
+    .pulse {
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 16px rgba(155, 123, 255, 0.8);
+      background: var(--success);
+      box-shadow: 0 0 18px rgba(111,255,194,0.9);
     }
 
     h1 {
-      font-size: clamp(34px, 6vw, 56px);
-      line-height: 1.06;
-      margin: 0 0 12px;
-      letter-spacing: -0.03em;
+      margin: 0;
+      font-size: clamp(36px, 7vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      position: relative;
+      z-index: 1;
     }
 
-    .subtitle {
-      margin: 0;
-      max-width: 720px;
+    .lead {
+      margin: 18px 0 0;
+      max-width: 760px;
       color: var(--muted);
-      font-size: 17px;
+      font-size: clamp(16px, 2vw, 19px);
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+      position: relative;
+      z-index: 1;
     }
 
     .meta {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .meta-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 20px;
       padding: 16px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
     }
 
-    .meta-label {
+    .meta span {
+      display: block;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
-    .meta-value, .meta-value a {
+    .meta strong, .meta a {
       color: var(--text);
       text-decoration: none;
-      font-weight: 600;
+      font-size: 15px;
       word-break: break-word;
     }
 
-    .grid {
+    .layout {
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 300px 1fr;
       gap: 24px;
       margin-top: 26px;
     }
 
-    .toc, .content-card {
+    .toc, .policy {
+      border: 1px solid var(--border);
       background: var(--card);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
     .toc {
-      padding: 20px;
       position: sticky;
-      top: 20px;
+      top: 22px;
       height: fit-content;
+      padding: 20px;
     }
 
     .toc h2 {
-      margin-top: 0;
+      margin: 0 0 12px;
       font-size: 18px;
-      margin-bottom: 14px;
     }
 
     .toc a {
       display: block;
+      padding: 10px 12px;
       color: var(--muted);
       text-decoration: none;
-      padding: 10px 12px;
       border-radius: 14px;
-      transition: 0.2s ease;
-      font-size: 15px;
+      transition: 180ms ease;
+      font-size: 14px;
     }
 
     .toc a:hover {
-      background: rgba(255,255,255,0.07);
       color: var(--text);
-      transform: translateX(2px);
+      background: rgba(255,255,255,0.08);
+      transform: translateX(3px);
     }
 
-    .content-card {
-      padding: 14px;
+    .policy {
+      padding: 10px;
     }
 
     section {
-      padding: 22px 18px;
+      padding: 24px 22px;
       border-radius: 20px;
     }
 
     section + section {
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.09);
     }
 
-    h2 {
-      font-size: 24px;
+    section h2 {
       margin: 0 0 10px;
-      letter-spacing: -0.02em;
+      font-size: 25px;
+      letter-spacing: -0.03em;
     }
 
     p {
+      color: #edf0ff;
       margin: 10px 0 0;
-      color: #e8ebf8;
-    }
-
-    .muted {
-      color: var(--muted);
     }
 
     ul {
@@ -217,322 +260,282 @@
     }
 
     li {
-      margin: 8px 0;
-      color: #e8ebf8;
+      margin: 9px 0;
+      color: #edf0ff;
     }
 
-    .highlight {
-      margin-top: 14px;
+    strong {
+      color: #ffffff;
+    }
+
+    .callout {
+      margin-top: 16px;
       padding: 16px 18px;
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(155,123,255,0.12), rgba(93,225,255,0.09));
-      border: 1px solid rgba(155,123,255,0.22);
+      border: 1px solid rgba(66,217,255,0.22);
+      background: linear-gradient(135deg, rgba(66,217,255,0.12), rgba(143,124,255,0.10));
+      color: #eefaff;
     }
 
-    .contact-box {
-      margin-top: 14px;
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
+    .privacy-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .privacy-badges span {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.12);
+      color: #e9ecff;
+      font-size: 13px;
     }
 
-    .contact-box a {
+    .contact-card {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .contact-card a {
       color: #cfc8ff;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 600;
     }
 
     footer {
-      margin-top: 24px;
       text-align: center;
       color: var(--muted);
       font-size: 14px;
-      padding-bottom: 12px;
+      margin-top: 26px;
     }
 
-    @media (max-width: 860px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .toc {
-        position: static;
-      }
-
-      .hero {
-        padding: 30px 20px;
-      }
-
-      .content-card {
-        padding: 6px;
-      }
-
-      section {
-        padding: 20px 14px;
-      }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .meta-grid { grid-template-columns: 1fr; }
+      section { padding: 22px 16px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <header class="hero">
-      <div class="badge">
-        <span class="dot"></span>
-        Privacy Policy
+      <div class="brand-row">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title">NeoLauncher</div>
+          <div class="brand-subtitle">Android launcher by Philson Varghese</div>
+        </div>
       </div>
 
-      <h1>NeoLauncher Privacy Policy</h1>
-      <p class="subtitle">
-        This Privacy Policy explains how NeoLauncher collects, uses, stores, and protects information when you use the app.
+      <div class="pill"><span class="pulse"></span> Privacy Policy</div>
+      <h1>Privacy built around local control.</h1>
+      <p class="lead">
+        This Privacy Policy explains how NeoLauncher accesses, uses, stores, and shares information when you use the app.
+        Most launcher data stays on your device, while optional online features use limited third-party services only when needed.
       </p>
 
-      <div class="meta">
-        <div class="meta-card">
-          <div class="meta-label">Last updated</div>
-          <div class="meta-value">April 2, 2026</div>
+      <div class="meta-grid">
+        <div class="meta">
+          <span>Last updated</span>
+          <strong>May 20, 2026</strong>
         </div>
-        <div class="meta-card">
-          <div class="meta-label">Developer</div>
-          <div class="meta-value">Philson Varghese</div>
+        <div class="meta">
+          <span>Developer</span>
+          <strong>Philson Varghese</strong>
         </div>
-        <div class="meta-card">
-          <div class="meta-label">Contact</div>
-          <div class="meta-value">
-            <a href="mailto:philzon13@gmail.com">philzon13@gmail.com</a>
-          </div>
+        <div class="meta">
+          <span>Contact</span>
+          <a href="mailto:philzon13@gmail.com">philzon13@gmail.com</a>
         </div>
       </div>
     </header>
 
-    <div class="grid">
-      <nav class="toc">
+    <div class="layout">
+      <aside class="toc" aria-label="Policy sections">
         <h2>Contents</h2>
-        <a href="#intro">1. Introduction</a>
-        <a href="#collect">2. Information We Collect</a>
+        <a href="#overview">1. Overview</a>
+        <a href="#access">2. Information NeoLauncher May Access</a>
         <a href="#use">3. How We Use Information</a>
-        <a href="#share">4. Data Sharing and Third Parties</a>
-        <a href="#ads">5. No Advertising or Tracking</a>
-        <a href="#storage">6. Data Storage and Retention</a>
+        <a href="#sharing">4. Third-Party Services and Data Sharing</a>
+        <a href="#ads-analytics">5. Advertising and Analytics</a>
+        <a href="#storage">6. Storage and Retention</a>
         <a href="#permissions">7. Permissions and Device Access</a>
         <a href="#choices">8. Your Choices and Controls</a>
         <a href="#security">9. Data Security</a>
-        <a href="#children">10. Children’s Privacy</a>
+        <a href="#children">10. Children's Privacy</a>
         <a href="#changes">11. Changes to This Policy</a>
         <a href="#contact">12. Contact</a>
-      </nav>
+      </aside>
 
-      <main class="content-card">
-        <section id="intro">
-          <h2>1. Introduction</h2>
+      <main class="policy">
+        <section id="overview">
+          <h2>1. Overview</h2>
           <p>
-            NeoLauncher is designed to provide launcher, search, widget, and personalization features while keeping data collection as limited as possible.
+            NeoLauncher is an Android launcher app. Most data used by NeoLauncher stays on your device and is processed locally.
+            Some optional features send limited data to third-party services only when needed to provide those features.
           </p>
-          <p>
-            Most data used by NeoLauncher remains on your device and is processed locally. Some information may be sent to external services only when needed to provide certain optional features, such as crash reporting, weather, geocoding, or web search.
-          </p>
-          <div class="highlight">
-            NeoLauncher does not sell your personal data and does not share personal data with third parties for advertising purposes.
+          <div class="privacy-badges">
+            <span>No personal data sale</span>
+            <span>No advertising SDKs</span>
+            <span>Local-first launcher data</span>
+            <span>Optional analytics control</span>
           </div>
         </section>
 
-        <section id="collect">
-          <h2>2. Information We Collect</h2>
-          <p>The app may access, process, or store the following categories of information:</p>
+        <section id="access">
+          <h2>2. Information NeoLauncher May Access</h2>
+          <p>Depending on the features you enable, NeoLauncher may access, process, or store:</p>
           <ul>
-            <li>
-              <strong>Crash diagnostics</strong> collected through <strong>Firebase Crashlytics</strong>, including crash reports, stack traces, technical error information, app version, and limited diagnostic app information such as launcher style.
-            </li>
-            <li>
-              <strong>Installed app metadata</strong>, such as app labels, icons, and component information, to display and organize the launcher and app drawer.
-            </li>
-            <li>
-              <strong>Contacts</strong>, if you grant permission, to support contact search functionality.
-            </li>
-            <li>
-              <strong>Calendar information</strong>, if you grant permission, to show upcoming events and calendar-related launcher features.
-            </li>
-            <li>
-              <strong>Location data</strong>, if you grant permission, to provide weather-related functionality.
-            </li>
-            <li>
-              <strong>Notification-related data</strong>, such as app package names and unread notification counts, if you enable notification access for unread badge features.
-            </li>
-            <li>
-              <strong>Battery state</strong>, such as battery level and charging state, for battery ring and related overlay features.
-            </li>
-            <li>
-              <strong>Camera availability state</strong>, only to optionally hide the battery ring while the front camera is in use.
-            </li>
-            <li>
-              <strong>User-entered search queries</strong>, when you use search suggestions or web search features.
-            </li>
-            <li>
-              <strong>Media session information</strong>, such as media title, artist, album art, and app package, when media-related launcher features are used.
-            </li>
-            <li>
-              <strong>App settings, layout preferences, workspace data, dock configuration, and personalization choices</strong> stored locally on your device.
-            </li>
+            <li><strong>Installed app metadata</strong>, such as app names, icons, package names, and component information so the launcher can display and organize your apps.</li>
+            <li><strong>Contacts</strong>, if you grant permission, to support contact search and quick actions.</li>
+            <li><strong>Calendar event information</strong>, if you grant permission, to show upcoming events and related search results.</li>
+            <li><strong>Approximate or precise location</strong>, and saved weather location details, if you grant permission, to provide weather information.</li>
+            <li><strong>Notification data</strong>, if you grant notification access, including app package names, unread counts, and the latest notification title/text preview shown on the home screen.</li>
+            <li><strong>Battery level and charging state</strong> for Battery Ring and related visual features.</li>
+            <li><strong>Front-camera availability state</strong> so visual overlays can hide while the camera is active.</li>
+            <li><strong>User-entered search queries</strong> when you use web search, suggestions, or optional external search actions.</li>
+            <li><strong>Media session metadata</strong>, such as title, artist, and album art when you use media features.</li>
+            <li><strong>App settings, home-screen layout, dock data, backup data, and imported font files</strong> stored locally on your device.</li>
+            <li><strong>Crash diagnostics and limited technical metadata</strong>, such as app version and launcher style, if crash reporting is enabled.</li>
+            <li><strong>Anonymous usage analytics</strong>, such as feature interactions and general app usage patterns, if analytics sharing is enabled.</li>
           </ul>
-          <div class="highlight">
-            Most information used by NeoLauncher stays on your device and is processed locally. Optional features only access the data needed for that feature to work.
-          </div>
         </section>
 
         <section id="use">
           <h2>3. How We Use Information</h2>
-          <p>NeoLauncher uses information only to provide, maintain, and improve app functionality. This includes:</p>
+          <p>NeoLauncher uses this information only to provide launcher functionality and improve app stability. This includes:</p>
           <ul>
-            <li>Displaying installed apps, home screen items, folders, and app drawer content</li>
-            <li>Providing contact search and calendar event features when permission is granted</li>
-            <li>Providing weather information and location-based weather display when permission is granted</li>
-            <li>Supporting search suggestions and web search actions</li>
-            <li>Displaying unread badge counts for supported apps</li>
-            <li>Displaying battery ring and edge lighting overlays</li>
-            <li>Showing media-related launcher widgets or media information where applicable</li>
-            <li>Saving launcher settings, theme choices, layout data, and backup/restore information</li>
-            <li>Monitoring crashes and technical issues to improve stability and fix bugs</li>
+            <li>Displaying and organizing your apps, widgets, home-screen layout, and dock</li>
+            <li>Providing contact search, calendar features, and media features</li>
+            <li>Showing weather information and location names</li>
+            <li>Supporting search, suggestions, and optional external search actions</li>
+            <li>Showing unread badge counts and notification previews on the home screen</li>
+            <li>Rendering Battery Ring and Edge Lighting effects</li>
+            <li>Saving your preferences, backups, and personalization choices</li>
+            <li>Diagnosing crashes and improving reliability</li>
+            <li>Understanding how features are used in aggregate to guide future improvements</li>
           </ul>
         </section>
 
-        <section id="share">
-          <h2>4. Data Sharing and Third Parties</h2>
+        <section id="sharing">
+          <h2>4. Third-Party Services and Data Sharing</h2>
           <p>
-            NeoLauncher does not sell your personal data. NeoLauncher also does not share personal data with third parties for advertising purposes.
+            NeoLauncher does not sell your personal data and does not share personal data for advertising purposes.
           </p>
-          <p>
-            Some information may be sent to external services only when required to provide optional features:
-          </p>
+          <p>When you use relevant optional features, limited data may be sent to:</p>
           <ul>
-            <li>
-              <strong>Firebase Crashlytics</strong> for crash reporting and technical diagnostics
-            </li>
-            <li>
-              <strong>Open-Meteo</strong> for weather data requests
-            </li>
-            <li>
-              <strong>Nominatim / OpenStreetMap</strong> for geocoding or location-related lookups
-            </li>
-            <li>
-              <strong>Search providers</strong> such as Google, Bing, DuckDuckGo, Yahoo, or Brave when you use web search or search suggestion features
-            </li>
+            <li><strong>Firebase Crashlytics</strong>, if you keep crash reporting enabled</li>
+            <li><strong>Firebase Analytics</strong>, if you keep analytics sharing enabled, for anonymous and aggregated usage data only</li>
+            <li><strong>Open-Meteo</strong> and <strong>api.met.no</strong> for weather data</li>
+            <li><strong>Android Geocoder</strong> or <strong>OpenStreetMap Nominatim</strong> for reverse geocoding and place names</li>
+            <li><strong>sunrise-sunset.org</strong> for sunrise and sunset times used by weather-related displays</li>
+            <li><strong>Search providers</strong>, such as Google, Bing, DuckDuckGo, Yahoo, and Brave, when you use web search or suggestions</li>
+            <li><strong>External apps or services you choose to open</strong>, such as voice search, Google Lens, Gemini, phone, SMS, browser, calendar, music, or downloads apps</li>
           </ul>
-          <p class="muted">
-            Contacts, calendar data, notification badge counts, media information, battery state, and most personalization data are processed locally and are not transmitted by those features themselves.
-          </p>
+          <div class="callout">
+            Contacts, calendar data, notification previews, media information, battery data, and most launcher settings remain on your device unless you explicitly use a feature that hands data to another app or service.
+          </div>
         </section>
 
-        <section id="ads">
-          <h2>5. No Advertising or Tracking</h2>
+        <section id="ads-analytics">
+          <h2>5. Advertising and Analytics</h2>
+          <p>NeoLauncher:</p>
+          <ul>
+            <li>Does not show ads</li>
+            <li>Does not include advertising SDKs</li>
+            <li>Does not profile users for marketing purposes</li>
+            <li>Uses Firebase Analytics to collect anonymous, aggregated usage data to improve the app — this can be disabled in Advanced settings</li>
+          </ul>
           <p>
-            NeoLauncher does not display advertisements and does not include advertising SDKs.
-          </p>
-          <p>
-            NeoLauncher does not track users for marketing, behavioral advertising, or profiling purposes.
-          </p>
-          <p>
-            The only third-party service currently used in the app is <strong>Firebase Crashlytics</strong>, which is used solely for crash reporting and stability monitoring.
+            Analytics data collected is anonymous, aggregated, and never linked to your identity. No contacts, location,
+            notification content, or search queries are included in analytics data.
           </p>
         </section>
 
         <section id="storage">
-          <h2>6. Data Storage and Retention</h2>
+          <h2>6. Storage and Retention</h2>
           <p>
-            NeoLauncher stores most app data locally on your device. This may include settings, workspace layout, dock configuration, theme choices, preferences, backups, and similar launcher data.
+            Most launcher data is stored locally on your device, including settings, layout data, database records, imported font files,
+            and crash-recovery logs.
           </p>
           <p>
-            Some technical diagnostic information, such as crash reports, may be transmitted securely to Firebase Crashlytics.
+            If you create, export, restore, or share a backup, that backup file is stored or shared only where you choose.
+            Android device backup may also copy supported launcher data according to your device backup settings.
           </p>
           <p>
-            If you use backup or restore features, exported backup files may be created by you and stored or shared through Android’s file handling system.
-          </p>
-          <p class="muted">
-            Crash reporting via Firebase Crashlytics is enabled by default and cannot currently be disabled from within the app.
+            If crash reporting is enabled, crash reports may be sent securely to Firebase Crashlytics.
+            If analytics sharing is enabled, anonymous usage events are collected by Firebase Analytics and retained according to Google's Firebase data retention policies.
           </p>
         </section>
 
         <section id="permissions">
           <h2>7. Permissions and Device Access</h2>
-          <p>NeoLauncher may request permissions or special access to enable optional features:</p>
+          <p>NeoLauncher may request or use the following optional permissions or access to enable features:</p>
           <ul>
-            <li>
-              <strong>Contacts permission</strong> to support contact search
-            </li>
-            <li>
-              <strong>Calendar permission</strong> to show event-related features
-            </li>
-            <li>
-              <strong>Location permission</strong> to provide weather functionality
-            </li>
-            <li>
-              <strong>Notification access</strong> to show unread badge counts on app icons
-            </li>
-            <li>
-              <strong>Accessibility access</strong> to enable visual overlay features such as battery ring and edge lighting
-            </li>
-            <li>
-              <strong>Device admin access</strong> only if you choose to use supported device control actions such as screen lock
-            </li>
+            <li><strong>Contacts</strong> — for contact search and quick actions</li>
+            <li><strong>Calendar</strong> — for event display and search helpers</li>
+            <li><strong>Location</strong> — for weather</li>
+            <li><strong>Notification access</strong> — for unread badges and home-screen notification previews</li>
+            <li><strong>Accessibility access</strong> — for Battery Ring and Edge Lighting overlays and related system-event handling</li>
+            <li><strong>Device admin access</strong> — for optional device control actions such as locking the screen</li>
           </ul>
-          <p>
-            Accessibility access is used solely to support visual overlay functionality such as battery ring and edge lighting. It is not used to read personal messages, collect notification content, or monitor private user activity for advertising purposes.
-          </p>
-          <p>
-            For unread badges, NeoLauncher uses notification access only to determine app-related badge information such as package names and counts. It does not use this feature to sell or profile user data.
-          </p>
-          <p class="muted">
-            If you deny any permission or special access, the related feature may be limited or unavailable, but the app can still function in a reduced mode.
-          </p>
+          <p>NeoLauncher does not use these permissions for advertising or user profiling.</p>
         </section>
 
         <section id="choices">
           <h2>8. Your Choices and Controls</h2>
+          <p>You can:</p>
           <ul>
-            <li>You can deny or revoke runtime permissions at any time through Android system settings.</li>
-            <li>You can disable notification access, accessibility access, or device admin access through Android system settings.</li>
-            <li>You can reset launcher settings and data using in-app reset options where available.</li>
-            <li>You can uninstall the app to remove locally stored app data from your device, subject to normal Android behavior.</li>
-            <li>You can choose not to use optional features such as contact search, calendar access, weather, battery ring, edge lighting, or unread badges.</li>
+            <li>Grant or deny runtime permissions at any time in Android settings</li>
+            <li>Enable or disable notification access, accessibility access, or device admin access</li>
+            <li>Enable or disable crash reporting in Advanced settings</li>
+            <li>Enable or disable analytics sharing in Advanced settings</li>
+            <li>Reset launcher settings, clear app data, or uninstall the app</li>
+            <li>Choose not to use optional online features</li>
           </ul>
         </section>
 
         <section id="security">
           <h2>9. Data Security</h2>
           <p>
-            We take reasonable steps to protect information by limiting collection, keeping most processing on-device, and using established third-party services only when needed to provide app functionality.
-          </p>
-          <p>
-            However, no method of storage, transmission, or electronic processing can be guaranteed to be completely secure.
+            NeoLauncher minimizes data collection and keeps most processing on-device.
+            Reasonable safeguards are used, but no system can guarantee complete security.
           </p>
         </section>
 
         <section id="children">
-          <h2>10. Children’s Privacy</h2>
-          <p>
-            NeoLauncher is not directed to children, and we do not knowingly collect personal information from children.
-          </p>
+          <h2>10. Children's Privacy</h2>
+          <p>NeoLauncher is not directed to children and does not knowingly collect personal information from children.</p>
         </section>
 
         <section id="changes">
           <h2>11. Changes to This Policy</h2>
           <p>
-            This Privacy Policy may be updated from time to time. Any updates will be reflected by revising the “Last updated” date at the top of this page.
+            This Privacy Policy may be updated from time to time.
+            Updates will be reflected by the "Last updated" date.
           </p>
         </section>
 
         <section id="contact">
           <h2>12. Contact</h2>
-          <div class="contact-box">
+          <div class="contact-card">
             <strong>Philson Varghese</strong><br />
-            Email:
-            <a href="mailto:philzon13@gmail.com">philzon13@gmail.com</a>
+            Email: <a href="mailto:philzon13@gmail.com">philzon13@gmail.com</a><br />
+            Policy URL: <a href="https://philsonvarghese.github.io/neolauncher-privacy-policy/">https://philsonvarghese.github.io/neolauncher-privacy-policy/</a>
           </div>
         </section>
       </main>
     </div>
 
     <footer>
-      © 2026 NeoLauncher • Privacy Policy
+      © 2026 NeoLauncher. All rights reserved.
     </footer>
   </div>
 </body>
